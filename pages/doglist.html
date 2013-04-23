@@ -1,0 +1,38 @@
+<html>
+<head>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+<script src="../../../bootstrap/js/bootstrap.min.js"></script>      
+<script src="http://localhost:3000/dogs"></script>  
+
+<script>
+	$.ajax({
+	  url: 'http://localhost:3000/dogs',
+	  async: false,
+	  dataType: 'json',
+	  success: function (response) {
+
+	  	$.each(response, function(index){
+	  		var listItem = "<div id='doglist-item'></div>";
+	    	var image = reponse[index]['imageurl'];
+	    	var inside = '<label>' + reponse[index][name] + '</label>';
+	  	});
+
+	  }
+	});
+</script>
+
+</head>
+
+<body>
+
+	<div id='dog-list'>
+		<div id='doglist-item'>
+
+		</div>
+	</div>
+
+
+</body>
+</html>
